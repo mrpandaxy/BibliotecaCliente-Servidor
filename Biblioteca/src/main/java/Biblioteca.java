@@ -41,6 +41,18 @@ public class Biblioteca {
         salvarLivros();
     }
 
+    public void alugarLivro(String titulo) throws IOException {
+        for (Livros livro : livros) {
+            if (livro.getTitulo().equalsIgnoreCase(titulo)) {
+                livros.remove(livro);
+                livro.setNumeroDeExemplares(livro.getNumeroDeExemplares() - 1);
+                livros.add(livro);
+                break;
+            }
+        }
+        salvarLivros();
+    }
+
     static class BibliotecaData {
         public List<Livros> livros;
 
