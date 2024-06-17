@@ -30,4 +30,17 @@ public class Biblioteca {
             livros = new ArrayList<>();
         }
     }
+
+    private void salvarLivros() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writerWithDefaultPrettyPrinter().writeValue(new File(json), new BibliotecaData(livros));
+    }
+
+    static class BibliotecaData {
+        public List<Livros> livros;
+
+        public BibliotecaData(List<Livros> livros) {
+            this.livros = livros;
+        }
+    }
 }
