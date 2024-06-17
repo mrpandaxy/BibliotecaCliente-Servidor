@@ -36,6 +36,11 @@ public class Biblioteca {
         mapper.writerWithDefaultPrettyPrinter().writeValue(new File(json), new BibliotecaData(livros));
     }
 
+    public void cadastrarLivro(Livros livro) throws IOException {
+        livros.add(livro);
+        salvarLivros();
+    }
+
     static class BibliotecaData {
         public List<Livros> livros;
 
