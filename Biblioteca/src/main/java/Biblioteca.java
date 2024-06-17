@@ -65,6 +65,10 @@ public class Biblioteca {
         salvarLivros();
     }
 
+    public List<Livros> listarLivros() {
+        return livros;
+    }
+
     static class BibliotecaData {
         public List<Livros> livros;
 
