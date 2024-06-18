@@ -60,5 +60,4 @@ public String toString() {
     return String.format("Livro{titulo='%s', autor='%s', genero='%s', exemplares=%d}\n",
             titulo, autor, genero, numeroDeExemplares);
 }
-
 }
