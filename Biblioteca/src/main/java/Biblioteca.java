@@ -16,7 +16,6 @@ public class Biblioteca {
         objectMapper = new ObjectMapper();
         carregarLivros();
     }
-
     private void carregarLivros() throws IOException {
         File file = new File(json);
         if (file.exists()) {
@@ -30,17 +29,14 @@ public class Biblioteca {
             livros = new ArrayList<>();
         }
     }
-
     private void salvarLivros() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writerWithDefaultPrettyPrinter().writeValue(new File(json), new BibliotecaData(livros));
     }
-
     public void cadastrarLivro(Livros livro) throws IOException {
         livros.add(livro);
         salvarLivros();
     }
-
     public void alugarLivro(String titulo) throws IOException {
         for (Livros livro : livros) {
             if (livro.getTitulo().equalsIgnoreCase(titulo)) {
@@ -52,7 +48,6 @@ public class Biblioteca {
         }
         salvarLivros();
     }
-
     public void devolverLivro(String titulo) throws IOException {
         for (Livros livro : livros) {
             if (livro.getTitulo().equalsIgnoreCase(titulo)) {
